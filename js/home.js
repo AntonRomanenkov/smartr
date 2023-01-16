@@ -658,6 +658,34 @@ function text_subscribe() {
   });
 };
 
+function roadmap_setting() {
+  var data = {};
+  data["data"] = "multiple";
+  $("#roadmap_setting").find("textarea").each(function(i, e) {
+    var id = $(e).attr("id");
+    data[id] = $(e).val();
+  });
+  $("#roadmap_setting").find("input").each(function(i, e) {
+    var id = $(e).attr("id");
+    data[id] = $(e).val();
+  });
+  $.ajax({
+    type: "POST",
+    url: "https://www.smartr.app/home.php",
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+    data: data,
+    dataType: 'JSON',
+    success: (response) => {
+
+    },
+    error: function () {
+      console.log("ERROR:");
+    }
+  });
+}
+
 function init_home() {
   $.ajax({
     type: "POST",
@@ -695,6 +723,22 @@ function init_home() {
       document.getElementById('text_14').value = response[0].text_14;
       document.getElementById('text_15').value = response[0].text_15;
       document.getElementById('subscribe_text').value = response[0].subscribe_text;
+      document.getElementById('q1_text').value = response[0].q1_text;
+      document.getElementById('q2_text').value = response[0].q2_text;
+      document.getElementById('q3_text').value = response[0].q3_text;
+      document.getElementById('q4_text').value = response[0].q4_text;
+      document.getElementById('q5_text').value = response[0].q5_text;
+      document.getElementById('q6_text').value = response[0].q6_text;
+      document.getElementById('q7_text').value = response[0].q7_text;
+      document.getElementById('q8_text').value = response[0].q8_text;
+      document.getElementById('q1_title').value = response[0].q1_title;
+      document.getElementById('q2_title').value = response[0].q2_title;
+      document.getElementById('q3_title').value = response[0].q3_title;
+      document.getElementById('q4_title').value = response[0].q4_title;
+      document.getElementById('q5_title').value = response[0].q5_title;
+      document.getElementById('q6_title').value = response[0].q6_title;
+      document.getElementById('q7_title').value = response[0].q7_title;
+      document.getElementById('q8_title').value = response[0].q8_title;
     },
     error: function () {
       console.log("ERROR:");
