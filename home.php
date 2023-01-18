@@ -99,7 +99,8 @@ if (isset($_POST['data'])) {
             "q7_title" => $row['q7_title'],
             "q7_text" => $row['q7_text'],
             "q8_title" => $row['q8_title'],
-            "q8_text" => $row['q8_text'],
+            "q8_text" => $row['q8_text'], 
+            "youtube_link" => $row['youtube_link'], 
         );
 
     }

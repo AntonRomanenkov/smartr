@@ -1559,7 +1559,7 @@
   <section class="u-clearfix u-section-15" id="sec-f087">
     <div
       class="u-black u-container-style u-expanded-width-xs u-group u-hidden-lg u-hidden-md u-hidden-sm u-hidden-xl u-group-1">
-      <div class="u-container-layout u-valign-middle-xs u-container-layout-1">
+      <div class="u-container-layout u-valign-middle-xs u-container-layout-1" id="youtube_link">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/lWz-46NPqdk" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
@@ -1935,6 +1935,7 @@
         $(".q7_text").text(data.q7_text);
         $(".q8_title").text(data.q8_title);
         $(".q8_text").text(data.q8_text);
+        $("#youtube_link").html('<iframe height="250" src="' + data.youtube_link + '?autoplay=1" frameborder="0" allowfullscreen></iframe>');
       }, 'json');
     });
   </script>
