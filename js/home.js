@@ -709,6 +709,52 @@ function updateYoutube() {
   });
 };
 
+function updatePresaleDate() {
+  var data = document.getElementById('presale_date').value;
+  var name = 'presale_date';
+  $.ajax({
+    type: "POST",
+    url: "https://www.smartr.app/home.php",
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+    data: {
+      "data": data,
+      "name": name
+    },
+    dataType: 'JSON',
+    success: (response) => {
+
+    },
+    error: function () {
+      console.log("ERROR:");
+    }
+  });
+};
+
+function updatePresaleTimeZone() {
+  var data = document.getElementById('timezone').value;
+  var name = 'timezone';
+  $.ajax({
+    type: "POST",
+    url: "https://www.smartr.app/home.php",
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+    data: {
+      "data": data,
+      "name": name
+    },
+    dataType: 'JSON',
+    success: (response) => {
+
+    },
+    error: function () {
+      console.log("ERROR:");
+    }
+  });
+};
+
 function init_home() {
   $.ajax({
     type: "POST",
@@ -763,6 +809,8 @@ function init_home() {
       document.getElementById('q7_title').value = response[0].q7_title;
       document.getElementById('q8_title').value = response[0].q8_title;
       document.getElementById('youtube_link').value = response[0].youtube_link;
+      document.getElementById('presale_date').value = response[0].presale_date;
+      document.getElementById('timezone').value = response[0].timezone;
     },
     error: function () {
       console.log("ERROR:");

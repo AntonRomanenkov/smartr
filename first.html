@@ -16,6 +16,8 @@
    <link rel="stylesheet" href="css/style.css">
    <!-- Responsive CSS -->
    <link rel="stylesheet" href="css/responsive.css">
+   <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+   <!-- <link rel="stylesheet" href="./css/bootstrap-datetimepicker.min.css"> -->
 </head>
 
 <body onload="init_home();">
@@ -833,6 +835,39 @@
                   </div>
                </div>
             </div>
+            <div class="row">
+               <div class="col-sm-12 col-lg-6">
+                  <div class="iq-card">
+                     <div class="iq-card-header d-flex justify-content-between">
+                        <div class="iq-header-title">
+                           <h2 class="card-title">Presale Setting</h2>
+                        </div>
+                     </div>
+                     <div class="iq-card-body">
+                        <form>
+                           <div class="form-group">
+                              <label>Start Date:</label>
+                              <div class=" d-flex justify-content-between">
+                                 <input id="presale_date" type="input" class="form-control" style="width:70%">
+                                 <div>
+                                    <button type="button" class="btn btn-primary"
+                                       onclick="updatePresaleDate();">Submit</button>
+                                 </div>
+                              </div>
+                              <label>Time Zone:</label>
+                              <div class=" d-flex justify-content-between">
+                                 <input id="timezone" type="input" class="form-control" style="width:70%" placeholder="Input your timezone">
+                                 <div>
+                                    <button type="button" class="btn btn-primary"
+                                       onclick="updatePresaleTimeZone();">Submit</button>
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
          </div>
       </div>
    </div>
@@ -885,8 +920,16 @@
    <!-- Chart Custom JavaScript -->
    <script src="js/chart-custom.js"></script>
    <!-- Custom JavaScript -->
+   <!-- <script src="./js/bootstrap-datetimepicker.min.js"></script> -->
+   <script src="./js/bootstrap-datepicker.min.js"></script>
    <script src="js/custom.js"></script>
    <script src="js/home.js"></script>
+
+   <script>
+      $("#presale_date").datepicker({
+         format: 'yyyy-mm-dd'
+      });
+   </script>
 </body>
 
 </html>

@@ -101,6 +101,8 @@ if (isset($_POST['data'])) {
             "q8_title" => $row['q8_title'],
             "q8_text" => $row['q8_text'], 
             "youtube_link" => $row['youtube_link'], 
+            "presale_date" => $row['presale_date'], 
+            "timezone" => $row['timezone'], 
         );
 
     }

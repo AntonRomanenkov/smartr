@@ -30,13 +30,11 @@ Index Of Script
 Index Of Script
 ----------------------------------------------*/
 
-(function(jQuery) {
-
-
+(function (jQuery) {
 
     "use strict";
 
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
 
         /*---------------------------------------------------------------------
         Tooltip
@@ -64,11 +62,11 @@ Index Of Script
                     break;
             }
         }
-        jQuery('.iq-sidebar-menu .active').each(function(ele, index) {
+        jQuery('.iq-sidebar-menu .active').each(function (ele, index) {
             jQuery(this).addClass('active');
             jQuery(this).find('.iq-submenu').addClass('show');
         })
-        
+
 
         /*---------------------------------------------------------------------
         Magnific Popup
@@ -85,7 +83,7 @@ Index Of Script
             },
             image: {
                 tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-                titleSrc: function(item) {
+                titleSrc: function (item) {
                     return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
                 }
             }
@@ -103,7 +101,7 @@ Index Of Script
         /*---------------------------------------------------------------------
         Ripple Effect
         -----------------------------------------------------------------------*/
-        jQuery(document).on('click', ".iq-waves-effect", function(e) {
+        jQuery(document).on('click', ".iq-waves-effect", function (e) {
             // Remove any old one
             jQuery('.ripple').remove();
             // Setup
@@ -140,7 +138,7 @@ Index Of Script
         /*---------------------------------------------------------------------
         FullScreen
         -----------------------------------------------------------------------*/
-        jQuery(document).on('click', '.iq-full-screen', function() {
+        jQuery(document).on('click', '.iq-full-screen', function () {
             let elem = jQuery(this);
             if (!document.fullscreenElement &&
                 !document.mozFullScreenElement && // Mozilla
@@ -174,7 +172,7 @@ Index Of Script
 
         jQuery('.iq-accordion .iq-accordion-block .accordion-details').hide();
         jQuery('.iq-accordion .iq-accordion-block:first').addClass('accordion-active').children().slideDown('slow');
-        jQuery(document).on("click", '.iq-accordion .iq-accordion-block', function() {
+        jQuery(document).on("click", '.iq-accordion .iq-accordion-block', function () {
             if (jQuery(this).children('div.accordion-details ').is(':hidden')) {
                 jQuery('.iq-accordion .iq-accordion-block').removeClass('accordion-active').children('div.accordion-details ').slideUp('slow');
                 jQuery(this).toggleClass('accordion-active').children('div.accordion-details ').slideDown('slow');
@@ -183,7 +181,7 @@ Index Of Script
     });
 
 
-    jQuery(window).on('load', function(e) {
+    jQuery(window).on('load', function (e) {
 
         /*---------------------------------------------------------------------
         Page Loader
@@ -194,7 +192,7 @@ Index Of Script
         /*---------------------------------------------------------------------
        Ticket Booking
        -----------------------------------------------------------------------*/
-        jQuery(document).on('click', '.iq-booking-screen .iq-booking-no .list-inline-item .iq-seat ', function(e) {
+        jQuery(document).on('click', '.iq-booking-screen .iq-booking-no .list-inline-item .iq-seat ', function (e) {
             e.preventDefault();
             let sheet = 0;
             if (!jQuery(this).hasClass('bg-secondary')) {
@@ -203,11 +201,11 @@ Index Of Script
                 jQuery('.iq-film-block').find('span').text(sheet);
             }
         });
-        jQuery(document).on('click', '.ri-close-circle-line', function() {
+        jQuery(document).on('click', '.ri-close-circle-line', function () {
             jQuery(this).parent().parent().parent().parent().parent().removeClass('film-side');
         });
 
-        jQuery(document).on('click', '.iq-film-block', function() {
+        jQuery(document).on('click', '.iq-film-block', function () {
             if (parseInt(jQuery(this).find('span').text()) > 0) {
                 jQuery('.iq-sidebar-right-menu').addClass('film-side');
             }
@@ -217,7 +215,7 @@ Index Of Script
         /*---------------------------------------------------------------------
        Owl Carousel
        -----------------------------------------------------------------------*/
-        jQuery('.owl-carousel').each(function() {
+        jQuery('.owl-carousel').each(function () {
             let jQuerycarousel = jQuery(this);
             jQuerycarousel.owlCarousel({
                 items: jQuerycarousel.data("items"),
@@ -267,7 +265,7 @@ Index Of Script
         /*---------------------------------------------------------------------
         Search input
         -----------------------------------------------------------------------*/
-        jQuery(document).on('click', function(e) {
+        jQuery(document).on('click', function (e) {
             let myTargetElement = e.target;
             let selector, mainElement;
             if (jQuery(myTargetElement).hasClass('search-toggle') || jQuery(myTargetElement).parent().hasClass('search-toggle') || jQuery(myTargetElement).parent().parent().hasClass('search-toggle')) {
@@ -290,7 +288,7 @@ Index Of Script
                 mainElement.toggleClass('active');
 
                 e.preventDefault();
-            } else if (jQuery(myTargetElement).is('.search-input')) {} else {
+            } else if (jQuery(myTargetElement).is('.search-input')) { } else {
                 jQuery('.navbar-list li').removeClass('iq-show');
                 jQuery('.navbar-list li .search-toggle').removeClass('active');
             }
@@ -406,7 +404,7 @@ Index Of Script
             centerPadding: '60px',
             slidesToShow: 3,
             slidesToScroll: 1,
-            autoplay:true,
+            autoplay: true,
             focusOnSelect: true,
             responsive: [{
                 breakpoint: 992,
@@ -433,15 +431,15 @@ Index Of Script
         /*---------------------------------------------------------------------
         Progress Bar
         -----------------------------------------------------------------------*/
-        jQuery('.iq-progress-bar > span').each(function() {
+        jQuery('.iq-progress-bar > span').each(function () {
             let progressBar = jQuery(this);
             let width = jQuery(this).data('percent');
             progressBar.css({
                 'transition': 'width 2s'
             });
 
-            setTimeout(function() {
-                progressBar.appear(function() {
+            setTimeout(function () {
+                progressBar.appear(function () {
                     progressBar.css('width', width + '%');
                 });
             }, 100);
@@ -451,11 +449,11 @@ Index Of Script
         /*---------------------------------------------------------------------
         Page Menu
         -----------------------------------------------------------------------*/
-        jQuery(document).on('click', '.wrapper-menu', function() {
+        jQuery(document).on('click', '.wrapper-menu', function () {
             jQuery(this).toggleClass('open');
         });
 
-        jQuery(document).on('click', ".wrapper-menu", function() {
+        jQuery(document).on('click', ".wrapper-menu", function () {
             jQuery("body").toggleClass("sidebar-main");
         });
 
@@ -475,12 +473,12 @@ Index Of Script
         /*---------------------------------------------------------------------
         Mailbox
         -----------------------------------------------------------------------*/
-        jQuery(document).ready(function() {
-            jQuery('ul.iq-email-sender-list li').click(function() {
+        jQuery(document).ready(function () {
+            jQuery('ul.iq-email-sender-list li').click(function () {
                 jQuery(this).next().addClass('show');
             });
 
-            jQuery('.email-app-details li h4').click(function() {
+            jQuery('.email-app-details li h4').click(function () {
                 jQuery('.email-app-details').removeClass('show');
             });
         });
@@ -488,73 +486,73 @@ Index Of Script
         /*---------------------------------------------------------------------
         chatuser
         -----------------------------------------------------------------------*/
-        jQuery(document).ready(function() {
-            jQuery('.chat-head .chat-user-profile').click(function() {
+        jQuery(document).ready(function () {
+            jQuery('.chat-head .chat-user-profile').click(function () {
                 jQuery(this).parent().next().toggleClass('show');
             });
-            jQuery('.user-profile .close-popup').click(function() {
+            jQuery('.user-profile .close-popup').click(function () {
                 jQuery(this).parent().parent().removeClass('show');
-            });            
+            });
         });
 
         /*---------------------------------------------------------------------
         chatuser main
         -----------------------------------------------------------------------*/
-        jQuery(document).ready(function() {
-            jQuery('.chat-search .chat-profile').click(function() {
+        jQuery(document).ready(function () {
+            jQuery('.chat-search .chat-profile').click(function () {
                 jQuery(this).parent().next().toggleClass('show');
             });
-            jQuery('.user-profile .close-popup').click(function() {
+            jQuery('.user-profile .close-popup').click(function () {
                 jQuery(this).parent().parent().removeClass('show');
-            });            
+            });
         });
 
         /*---------------------------------------------------------------------
         Chat start
         -----------------------------------------------------------------------*/
-        jQuery(document).ready(function() {
-            jQuery('#chat-start').click(function() {
+        jQuery(document).ready(function () {
+            jQuery('#chat-start').click(function () {
                 jQuery('.chat-data-left').toggleClass('show');
-            }); 
-            jQuery('.close-btn-res').click(function() {
+            });
+            jQuery('.close-btn-res').click(function () {
                 jQuery('.chat-data-left').removeClass('show');
             });
-            jQuery('.iq-chat-ui li').click(function() {
+            jQuery('.iq-chat-ui li').click(function () {
                 jQuery('.chat-data-left').removeClass('show');
             });
-            jQuery('.sidebar-toggle').click(function() {
+            jQuery('.sidebar-toggle').click(function () {
                 jQuery('.chat-data-left').addClass('show');
-            });                       
+            });
         });
 
         /*---------------------------------------------------------------------
         todo Page 
         -----------------------------------------------------------------------*/
-        jQuery(document).ready(function() {
-            jQuery('.todo-task-list > li > a').click(function() {
+        jQuery(document).ready(function () {
+            jQuery('.todo-task-list > li > a').click(function () {
                 jQuery('.todo-task-list li').removeClass('active');
                 jQuery('.todo-task-list .sub-task').removeClass('show');
                 jQuery(this).parent().toggleClass('active');
                 jQuery(this).next().toggleClass('show');
             });
-            jQuery('.todo-task-list > li li > a').click(function() {
+            jQuery('.todo-task-list > li li > a').click(function () {
                 jQuery('.todo-task-list li li').removeClass('active');
                 jQuery(this).parent().toggleClass('active');
             });
-        }); 
+        });
         /*---------------------------------------------------------------------
         Form Validation
         -----------------------------------------------------------------------*/
 
         // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function() {
+        (function () {
             'use strict';
-            window.addEventListener('load', function() {
+            window.addEventListener('load', function () {
                 // Fetch all the forms we want to apply custom Bootstrap validation styles to
                 var forms = document.getElementsByClassName('needs-validation');
                 // Loop over them and prevent submission
-                var validation = Array.prototype.filter.call(forms, function(form) {
-                    form.addEventListener('submit', function(event) {
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
                         if (form.checkValidity() === false) {
                             event.preventDefault();
                             event.stopPropagation();
@@ -568,34 +566,34 @@ Index Of Script
         /*---------------------------------------------------------------------
         Sidebar Widget
         -----------------------------------------------------------------------*/
-       jQuery(document).ready(function() {
-            jQuery('.todo-task-lists li').click(function() {
+        jQuery(document).ready(function () {
+            jQuery('.todo-task-lists li').click(function () {
                 if ($(this).find('input:checkbox[name=todo-check]').is(":checked")) {
 
-                      $(this).find('input:checkbox[name=todo-check]').attr("checked", false);
-                      jQuery(this).removeClass('active-task');
+                    $(this).find('input:checkbox[name=todo-check]').attr("checked", false);
+                    jQuery(this).removeClass('active-task');
                 }
                 else {
-                      $(this).find('input:checkbox[name=todo-check]').attr("checked", true);
-                      jQuery(this).addClass('active-task');
+                    $(this).find('input:checkbox[name=todo-check]').attr("checked", true);
+                    jQuery(this).addClass('active-task');
                 }
                 // jQuery(this).addClass('active-task');
-            });                                  
+            });
         });
 
-       /*---------------------------------------------------------------------
-           checkout
-        -----------------------------------------------------------------------*/
+        /*---------------------------------------------------------------------
+            checkout
+         -----------------------------------------------------------------------*/
 
-        jQuery(document).ready(function(){
-            jQuery('#place-order').click(function(){
+        jQuery(document).ready(function () {
+            jQuery('#place-order').click(function () {
                 jQuery('#cart').removeClass('show');
                 jQuery('#address').addClass('show');
                 jQuery('#step1').removeClass('active');
                 jQuery('#step1').addClass('done');
                 jQuery('#step2').addClass('active');
             });
-            jQuery('#deliver-address').click(function(){
+            jQuery('#deliver-address').click(function () {
                 jQuery('#address').removeClass('show');
                 jQuery('#payment').addClass('show');
                 jQuery('#step2').removeClass('active');
@@ -608,27 +606,24 @@ Index Of Script
            Scroll up menu
         -----------------------------------------------------------------------*/
         var position = $(window).scrollTop();
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             var scroll = $(window).scrollTop();
             //  console.log(scroll);
-            
-            if(scroll < position) {
-                 $('.tab-menu-horizontal').addClass('menu-up');
-                 $('.tab-menu-horizontal').removeClass('menu-down');
-            } 
+
+            if (scroll < position) {
+                $('.tab-menu-horizontal').addClass('menu-up');
+                $('.tab-menu-horizontal').removeClass('menu-down');
+            }
             else {
                 $('.tab-menu-horizontal').addClass('menu-down');
                 $('.tab-menu-horizontal').removeClass('menu-up');
             }
-            if(scroll == 0)
-            {
+            if (scroll == 0) {
                 $('.tab-menu-horizontal').removeClass('menu-up');
                 $('.tab-menu-horizontal').removeClass('menu-down');
             }
             position = scroll;
         });
-
-       
 
     });
 
@@ -638,5 +633,5 @@ Index Of Script
 
 
 
-    
+
 
